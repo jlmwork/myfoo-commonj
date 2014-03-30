@@ -40,7 +40,11 @@ public final class TimerExecutor implements Runnable {
 		}
 		finally {
 			running = false;
-			timerManager.notifyAll();
+			try {
+				timerManager.notifyAll();
+			} catch(IllegalMonitorStateException e) {
+				
+			}
 		}
 	}
 
