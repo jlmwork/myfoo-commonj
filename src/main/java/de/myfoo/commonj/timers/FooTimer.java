@@ -153,7 +153,7 @@ public abstract class FooTimer implements Timer {
 	 * @return <code>true</code> if timer is expired.
 	 */
 	public boolean isExpired() {
-		return scheduledExcecutionTime >= System.currentTimeMillis();
+		return scheduledExcecutionTime < System.currentTimeMillis();
 	}
 
 }
